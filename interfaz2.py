@@ -1,7 +1,6 @@
-from tkinter import filedialog
 import customtkinter
 import tkinter as tk
-from analizadorSintactico import analizador_sintactico
+from parserLogic import parse
 
 
 customtkinter.set_appearance_mode("light") #"system"|"light"|"dark"
@@ -22,7 +21,7 @@ result.grid(row=6, column=0, padx=0, pady=(0,20))
 
 def getData():
     entrada = txtcadena.get()
-    resultado = analizador_sintactico(entrada)
+    resultado = parse(entrada)
     print("La cadena a evaluar es:", entrada) 
     print("La cadena evaluada es:", resultado) 
     result.delete(0, 'end')  # Borra el contenido actual

@@ -1,6 +1,5 @@
 import customtkinter
-import tkinter as tk
-from parserLogic import analizador_sintactico
+from parserLogic import parse
 
 customtkinter.set_appearance_mode("light") #"system"|"light"|"dark"
 app = customtkinter.CTk()
@@ -20,9 +19,9 @@ frame_resultado.grid(row=6, column=0, padx=0, pady=(0,20))
 
 def getData():
     entrada = txtcadena.get()
-    resultado = analizador_sintactico(entrada)
-    print("La cadena a evaluar es:", entrada) 
-    print("La cadena evaluada es:", resultado) 
+    resultado = parse(entrada)
+    #print("La cadena a evaluar es:", entrada) 
+    print("La cadena evaluada es:\n", resultado) 
     
     for widget in frame_resultado.winfo_children():
         widget.destroy()
@@ -35,3 +34,6 @@ buttonEmpezar = customtkinter.CTkButton(app, text="Empezar", width=250, height=2
 buttonEmpezar.grid(row=9, column=0, padx=0, pady=(0,0))
 
 app.mainloop()
+
+#PRUEBA VALIDA
+#automata alfabeto : 1,a,2,b; aceptacion : 1; fin 
