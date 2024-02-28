@@ -14,11 +14,12 @@ parser_table = {
     ('F', 'fin'): ['fin'],
     (':', 'alpha'): ['alpha'],
     (':', 'digit'): ['digit'],
-    ('C', 'aceptacion'): ['aceptacion', ':', 'D', ';', 'fin'],
+    ('C', 'aceptacion'): ['aceptacion', ':', 'D', ';', 'fin'],  # Después de 'aceptacion', se espera ':' seguido de 'D', ';' y 'fin'
+    (':', 'aceptacion'): ['D'],
     ('D', 'digit'): ['digit'],
-    ('AL', ':'): [':'],
-    ('V', ';'): [';'],
-    ('V', ':'): [':', ';']
+    ('D', ';'): [';'],
+    (';', ';'): ['V'],  # Después de ';', avanzamos a 'V'
+    ('V', '$'): ['epsilon']
 }
 
 
