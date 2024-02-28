@@ -17,16 +17,16 @@ titleDato1.grid(row=3, column=0, padx=0, pady=(0,13))
 txtcadena = customtkinter.CTkEntry(app, placeholder_text="", width=450, height=50, corner_radius=2, border_color="#FD94FF", font=("Open Sans Regular", 14))
 txtcadena.grid(row=4, column=0, padx=0, pady=(0,20))
 
-tolerancia = customtkinter.CTkEntry(app, placeholder_text="", width=870, height=150, corner_radius=2, border_color="#FD94FF", font=("Open Sans Regular", 12))
-tolerancia.grid(row=6, column=0, padx=0, pady=(0,20))
+result = customtkinter.CTkEntry(app, placeholder_text="", width=870, height=150, corner_radius=2, border_color="#FD94FF", font=("Open Sans Regular", 12))
+result.grid(row=6, column=0, padx=0, pady=(0,20))
 
 def getData():
     entrada = txtcadena.get()
     resultado = analizador_sintactico(entrada)
     print("La cadena a evaluar es:", entrada) 
     print("La cadena evaluada es:", resultado) 
-    tolerancia.delete(0, 'end')  # Borra el contenido actual
-    tolerancia.insert('end', resultado)
+    result.delete(0, 'end')  # Borra el contenido actual
+    result.insert('end', resultado)
     #tolerancia.insert('end', "Resultado: " + resultado)  # Inserta el nuevo texto
 
 

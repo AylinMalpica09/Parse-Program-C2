@@ -4,17 +4,17 @@ from predictiveTable import predictive_table
 terminales = set([clave[1] for clave in predictive_table.keys()])
 palabras_reservadas = ['automata', 'alfabeto', 'aceptacion', 'fin']
 
-def organizador(palabras):
+def organizador(words):
     simbolos = []
-    for palabra in palabras:
-        if palabra in palabras_reservadas:
-            simbolos.append(palabra)
+    for word in words:
+        if word in palabras_reservadas:
+            simbolos.append(word)
         else:
-            for letra in palabra:
+            for letra in word:
                 if letra.isalpha():
                     simbolos.append('letters')
                 elif letra.isdigit():
-                    simbolos.append('digit')
+                    simbolos.append('digits')
                 else:
                     simbolos.append(letra)
     return simbolos
@@ -23,8 +23,8 @@ def analizador_sintactico(entrada):
     stack = ['$', 'S']
     text = str(stack) + '\n'
     entrada = entrada.strip() + ' $'
-    palabras = entrada.split(' ')
-    simbolos = organizador(palabras)
+    words = entrada.split(' ')
+    simbolos = organizador(words)
     index = 0
     while True:
         X = stack.pop()

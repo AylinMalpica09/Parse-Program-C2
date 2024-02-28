@@ -6,17 +6,17 @@ predictive_table = {
     ('AL', 'alfabeto'): ['G', ':', 'SM', 'RA', ';'],
     ('G', 'alfabeto'): ['alfabeto'],
     ('SM', 'letters'): ['letters'],
-    ('SM', 'digit'): ['digit'],
+    ('SM', 'digits'): ['digits'],
     ('RA', ','): [',', 'SM', 'RA'],
     ('RA', ';'): ['epsilon'],
     ('RA', ':'): [':'],  
     ('F', 'aceptacion'): ['aceptacion', ':', 'D', ';', 'fin'],  # ajustamos la regla para seguir con 'aceptacion' después de ';'
     ('F', 'fin'): ['fin'],
     (':', 'letters'): ['letters'],
-    (':', 'digit'): ['digit'],
+    (':', 'digits'): ['digits'],
     ('C', 'aceptacion'): ['aceptacion', ':', 'D', ';', 'fin'],  # Después de 'aceptacion', se espera ':' seguido de 'D', ';' y 'fin'
     (':', 'aceptacion'): ['D'],
-    ('D', 'digit'): ['digit'],
+    ('D', 'digits'): ['digits'],
     ('D', ';'): [';'],
     (';', ';'): ['V'],  # Después de ';', avanzamos a 'V'
     ('V', '$'): ['epsilon']
