@@ -1,4 +1,5 @@
 import tkinter as tk
+
 from tkinter.scrolledtext import ScrolledText
 from analizadorSintactico import analizador_sintactico
 
